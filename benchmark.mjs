@@ -108,13 +108,13 @@ for (const router of routers) {
   for (const testName in testRoutes) {
     const { method, url, expectedHandler } = testRoutes[testName];
 
-    suites[testName].add(router.name, () => {
+    suites[testName].add(router, () => {
       const req = { method, url };
       const handler = findHandler(req);
 
       if (handler !== expectedHandler) {
         // Validate that the router worked as expected
-        console.log(router.name, "failed to look up the correct route:", req);
+        console.log(router, "failed to look up the correct route:", req);
         process.exit(1);
       }
     });
@@ -122,7 +122,7 @@ for (const router of routers) {
     allTests.push({ method, url });
   }
 
-  suites["all routes"].add(router.name, () => {
+  suites["all routes"].add(router, () => {
     for (let i = 0; i < allTests.length; i++) {
       const test = allTests[i];
       const req = { method: test.method, url: test.url };

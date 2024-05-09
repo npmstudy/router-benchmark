@@ -29,7 +29,7 @@ nextRouter: for (const router of routers) {
     }
   }
 
-  suite.add(router.name, () => {
+  suite.add(router, () => {
     for (let i = 0; i < routes.length; i++) {
       const req = { method: routes[i][0], url: routes[i][2] };
       findHandler(req);
