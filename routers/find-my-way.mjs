@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const findMyWay = require('find-my-way');
+import findMyWay from "find-my-way";
 
 // From: https://github.com/delvedor/find-my-way/blob/v2.2.0/index.js#L597-L608
 function sanitizeUrl(url) {
@@ -18,13 +18,11 @@ function sanitizeUrl(url) {
 
 const router = findMyWay();
 
-module.exports = {
-  registerRoute(method, path, handler) {
-    router.on(method, path, handler);
-  },
+export function registerRoute(method, path, handler) {
+  router.on(method, path, handler);
+}
 
-  findHandler(req) {
-    const route = router.find(req.method, sanitizeUrl(req.url));
-    return route === null ? undefined : route.handler;
-  },
-};
+export function findHandler(req) {
+  const route = router.find(req.method, sanitizeUrl(req.url));
+  return route === null ? undefined : route.handler;
+}

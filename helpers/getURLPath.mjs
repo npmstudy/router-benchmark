@@ -6,4 +6,4 @@ function getURLPath(url) {
   return queryIndex === -1 ? url : url.slice(0, queryIndex);
 }
 
-module.exports = getURLPath;
+export default getURLPath;

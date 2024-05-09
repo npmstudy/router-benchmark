@@ -2,21 +2,23 @@
   "name": "@medley/router-benchmark",
   "version": "0.0.0",
   "private": true,
-  "main": "benchmark.js",
+  "main": "benchmark.mjs",
   "dependencies": {
-    "@medley/router": "^0.2.1",
-    "@parisholley/road-runner": "^1.1.8",
-    "anumargak": "^2.2.0",
-    "benchmark": "^2.1.4",
-    "chalk": "^2.4.2",
-    "express": "^4.17.1",
-    "find-my-way": "^2.2.0",
-    "koa-tree-router": "^0.5.0",
-    "parseurl": "^1.3.3",
-    "safe-decode-uri-component": "^1.2.1",
-    "trek-router": "^1.2.0"
+    "@medley/router": "latest",
+    "@parisholley/road-runner": "latest",
+    "anumargak": "latest",
+    "benchmark": "latest",
+    "chalk": "latest",
+    "desm": "^1.3.1",
+    "express": "latest",
+    "find-my-way": "latest",
+    "koa-tree-router": "latest",
+    "parseurl": "latest",
+    "safe-decode-uri-component": "latest",
+    "trek-router": "latest"
   },
   "scripts": {
-    "start": "node benchmark.js"
+    "start": "node benchmark.mjs",
+    "api": "node api-benchmarks/github-api/benchmark.mjs"
   }
 }
