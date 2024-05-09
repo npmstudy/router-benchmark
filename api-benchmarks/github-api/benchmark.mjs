@@ -13,7 +13,6 @@ const routers = fs
   .readdirSync(join(import.meta.url, "../../routers"))
   .filter((fileName) => fileName.endsWith(".mjs"));
 
-console.dir(routers);
 nextRouter: for (const router of routers) {
   const { registerRoute, findHandler } = await import(
     join(import.meta.url, "../../routers", router)
